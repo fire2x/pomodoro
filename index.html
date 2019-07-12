@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+        body{
+            background-color:#FAFAFA; 
+        }
+
+        .main{
+            position: relative;
+            margin:50px auto;
+            width:1280px;
+            height:800px;
+            background-color:#FFEDF7;
+        }
+
+        .main_r{
+            width:450px;
+            height:800px;
+            background-color:#003164;
+            float:right;
+        }
+        
+
+        ._input{
+            margin: 48px 0px 0px 85px;
+            position: absolute;
+            width:445px;
+            height:56px;
+        }
+
+        .add_input{
+
+            font-family: 'Roboto';
+
+            font-style:italic;
+            font-weight: Bold;
+            
+            font-size:16px;
+            padding-left: 16px;
+            color:#FF4384;
+            width:429px;
+            height:56px;
+            border:none;
+        } 
+
+        .svg_add{
+            cursor:pointer;
+            position: absolute;
+            top:16px;
+            left:405px;
+        }
+
+        .title{
+            font-family: 'Roboto';
+            font-weight: Bold;
+            left:149px;
+            top:249px;
+            width:348px;
+            height:28px;
+            position: absolute;
+            font-size:24px;
+            color:#003164;
+        }
+
+        .title_radio{
+            position: absolute;
+            top:249px;
+            left:85px;
+            width:48px;
+            height:48px;
+            border-radius: 50%;
+            border:2px solid #003164;
+
+        }
+
+        .title_radio_1{
+            position: absolute;
+            top:285px;
+            left:149px;
+            width:12px;
+            height:12px;
+            border-radius: 50%;
+            border:1px solid #FF4384;
+        }
+
+        .time{
+            font-family: 'Roboto';
+            font-weight: Bold;
+            left:80px;
+            top:297px;
+            width:454px;
+            height:206px;
+            position: absolute;
+            font-size:176px;
+            color:#FF4384;
+            text-align:center;
+        }
+
+        .list_box{
+            position: absolute;
+            top:610px;
+            left:85px;
+            width:445px;
+            height:128px;
+            font-family: 'Roboto';
+            font-weight: Bold;
+            font-size:16px;
+            color:#003164;
+        }
+
+        .list{
+            position: relative;
+            margin-bottom: 6px;
+            width: 445px;
+            height:32px;
+            border-bottom:2px solid #ccc;
+        }
+
+        .list_radio{
+            position: absolute;
+            width:20px;
+            height:20px;
+            border-radius: 50%;
+            border:2px solid #003164;
+        }
+
+        .list_text{
+            position: absolute;
+            top:3px;
+            left:30px;
+        }
+
+        .list_play{
+            position: absolute;
+            right:0px;
+        }
+
+        .big_radio{
+            position: absolute;
+            top:130px;
+            left:560px;
+            width:540px;
+            height:540px;
+            border-radius: 50%;
+            border:3px solid #FF4384;
+        }
+
+        .small_radio{
+            position: absolute;
+            top:10px;
+            left:10px;
+            width:513px;
+            height:513px;
+            border-radius: 50%;
+            background-color: #FF4384;
+            border:3px solid #FF4384;
+        }
+        
+        #container {
+            position: absolute;
+            top:0px;
+            left:0px;
+            width:540px;
+            height:540px;
+        }
+
+        .play_white{
+            cursor: pointer;
+            position: absolute;
+            top:212px;
+            left:212px;
+        }
+        
+        .reset{
+            position: absolute;
+            cursor: pointer;
+            background-color:white;
+            top:294px;
+            left:318px;
+            width:12px;
+            height:12px;
+        }
+
+        .stop_icon{
+            position: relative;
+            cursor: pointer;
+            top:48px;
+            left:329px;
+            width:36px;
+            height:36px;
+        }
+
+        .chart_icon{
+            position: relative;
+            cursor: pointer;
+            top:132px;
+            left:329px;
+            width:36px;
+            height:36px;
+        }
+        .music_icon{
+            position: relative;
+            cursor: pointer;
+            top:216px;
+            left:329px;
+            width:36px;
+            height:36px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="main" >
+
+    <div class="_input" >
+        <input type="text" class="add_input" value="ADD A NEW MISSION..." >
+        <svg xmlns="http://www.w3.org/2000/svg" class="svg_add" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="#FF4384" /><path d="M0 0h24v24H0z" fill="none" /></svg>
+    </div>
+
+    <div class="title" >THE FIRST THING TO DO TODAY</div>
+
+    <div class="title_radio" ></div>
+
+    <div class="title_radio_1" ></div>
+
+    <div class="time" id="time">25:00</div>
+
+    <div class="list_box">
+        <div class="list">
+            <div class="list_radio"></div>
+            <div class="list_text">THE SECOND THING TO DO TODAY</div>
+            <div class="list_play"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M0 0h24v24H0z" fill="none"/><path fill="#003164" d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg></div>
+        </div>
+        <div class="list">
+            <div class="list_radio"></div>
+            <div class="list_text">THE THIRD THING TO DO TODAY</div>
+            <div class="list_play"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M0 0h24v24H0z" fill="none"/><path fill="#003164" d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg></div>
+        </div>
+        <div class="list">
+            <div class="list_radio"></div>
+            <div class="list_text">THE FORTH THING TO DO TODAY</div>
+            <div class="list_play"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M0 0h24v24H0z" fill="none"/><path fill="#003164" d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg></div>
+        </div>
+        <div class="list" style="border:none;" >
+               <div style=" position: absolute;right:0px;color:#FF4384;">MORE</div>
+        </div>
+    </div>
+
+    <div class="big_radio">
+        <div id="container"></div>
+        <div class="small_radio" id="small_radio" >
+            <div class="play_white">
+                <svg id="play" xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 48 48" fill="#fff"><path d="M0 0h48v48H0z" fill="none"/><path d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm-4 29V15l12 9-12 9z"/></svg>
+                <svg id="stop" style="display:none" xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 24 24" fill="#FF4384"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+            </div>
+        </div>
+        <div class="reset" id="reset"></div>
+    </div>
+
+    <div class="main_r">
+        <div class="stop_icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"  ><path fill="white"   d="M4 10.5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm0-6c-.83 0-1.5.67-1.5 1.5S3.17 7.5 4 7.5 5.5 6.83 5.5 6 4.83 4.5 4 4.5zm0 12c-.83 0-1.5.68-1.5 1.5s.68 1.5 1.5 1.5 1.5-.68 1.5-1.5-.67-1.5-1.5-1.5zM7 19h14v-2H7v2zm0-6h14v-2H7v2zm0-8v2h14V5H7z"/><path fill="none" d="M0 0h24v24H0V0z"/></svg>
+        </div>
+        <div class="chart_icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><path  fill="white"  d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+        </div>
+        <div class="music_icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><path  d="M0 0h24v24H0z" fill="none"/><path fill="white" d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 5h-3v5.5c0 1.38-1.12 2.5-2.5 2.5S10 13.88 10 12.5s1.12-2.5 2.5-2.5c.57 0 1.08.19 1.5.51V5h4v2zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6z"/></svg>
+        </div>
+    </div>
+    
+</div>
+
+<script src="progressbar.js"></script>
+<script>
+    
+var sec = 25 * 60;
+var _sec =sec;
+var clock = true;
+var $ = (id) => document.querySelector(id);
+
+var bar = new ProgressBar.Circle(container, {
+  color: '#aaa',
+  strokeWidth: 4,
+  trailWidth: 0,
+  easing: 'easeInOut',
+  //duration: 1000,
+  text: {
+    autoStyleContainer: false
+  },
+  
+  from: { color: '#FF4384', width: 5 },
+  to: { color: '#FF4384', width: 5 },
+  
+  step: function(state, circle) {
+    circle.path.setAttribute('stroke', state.color);
+    circle.path.setAttribute('stroke-width', state.width);
+
+  }
+});
+
+bar.set(1);
+
+$("#play").addEventListener('click',function(){
+    clock =false;
+
+    $("#small_radio").style.background ='white';
+    $("#reset").style.background ='#FF4384';
+    $("#play").style.display ='none';
+    $("#stop").style.display ='block';
+
+    var set_time = setInterval(function(){
+
+        if(clock){
+            clearInterval(set_time);
+            clock = true;
+        }else{
+            _sec--;
+        }
+        
+        if(_sec >= 0 && clock != true){
+
+            let hour = ("00"+(parseInt(_sec/60))).substr((parseInt(_sec/60)).toString().length);
+            
+            let minute = (("00"+(_sec % 60))).substr( (_sec % 60).toString().length );
+            
+            $("#time").innerHTML = hour+":"+minute;
+
+            bar.animate(_sec/sec);
+        }
+        
+    },1000);
+    
+});
+
+$("#stop").addEventListener('click',function(){
+    $("#small_radio").style.background ='#FF4384';
+    $("#reset").style.background ='white';
+    $("#play").style.display ='block';
+    $("#stop").style.display ='none';
+    clock = true;
+});
+
+$("#reset").addEventListener('click',function(){
+    _sec = sec;
+    $("#small_radio").style.background ='#FF4384';
+    $("#reset").style.background ='white';
+    $("#play").style.display ='block';
+    $("#stop").style.display ='none';
+    $("#time").innerHTML ='25:00';
+    bar.animate(1);
+    clock = true;
+});
+</script>
+</body>
+</html>
